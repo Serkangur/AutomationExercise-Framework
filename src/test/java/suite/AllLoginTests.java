@@ -3,11 +3,11 @@ package suite;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import tests.*;
+import tests.login.Login_001;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-        CartAdd_001.class,
+        Login_001.class,
 
 })
 public class AllLoginTests {
