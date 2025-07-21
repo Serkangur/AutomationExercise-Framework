@@ -11,7 +11,7 @@ import java.time.Duration;
 
 public class BaseTest {
     public WebDriver driver;
-    protected String base_url = "https://opensource-demo.orangehrmlive.com/";
+    protected String base_url = "https://automationexercise.com/";
 
 
 

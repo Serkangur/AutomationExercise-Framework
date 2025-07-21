@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import com.github.javafaker.Faker;
 
 import java.time.Duration;
 
@@ -68,6 +69,11 @@ public class BasePage {
         }catch(InterruptedException e){
             e.printStackTrace();
         }
+    }
+
+    public static String generateRandomEmail() {
+        Faker faker = new Faker();
+        return faker.internet().emailAddress();
     }
 
 
