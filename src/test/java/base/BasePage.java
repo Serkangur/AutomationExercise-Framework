@@ -50,13 +50,8 @@ public class BasePage {
 
 
     // Retrieves the text from a WebElement.
-    //If the text is longer than 28 characters, trims the last 28 characters.
-    // This is used to match product names in the cart.
     public String getTextMethod(By locator) {
         String text = waitElement(locator).getText();
-        if (text.length() > 28) {
-            text = text.substring(0, text.length() - 28);
-        }
         return text;
     }
 

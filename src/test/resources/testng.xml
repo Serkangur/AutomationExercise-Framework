@@ -2,10 +2,8 @@
 <suite name="ParallelTestSuite" parallel="methods" thread-count="3">
 
     <test name="ParallelTests">
-        <classes>
-
-
-        </classes>
+        <packages>
+            <package name="tests.login"/>
+        </packages>
     </test>
-
 </suite>

@@ -1,6 +1,7 @@
 package pages;
 
 import base.BasePage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 import static constants.ConstantsLoginPage.*;
@@ -34,5 +35,16 @@ public class LoginPage extends BasePage {
 
     public void clickToSignUpButton(){
         clickToWebElement(signUpButton);
+    }
+
+    public String getTextErrorMessage() {
+        return getTextMethod(errorTextPassword);
+    }
+
+    public String getEmailValidationMessage() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        return (String) js.executeScript(
+                "return arguments[0].validationMessage;", find(mailTextBox)
+        );
     }
 }
