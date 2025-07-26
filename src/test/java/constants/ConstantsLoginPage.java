@@ -10,4 +10,5 @@ public class ConstantsLoginPage {
     public static By passwordTextBox= By.name("password");
     public static By submitButton = By.xpath("//button[@data-qa=\"login-button\"]");
     public static By errorTextPassword= By.xpath("//form//p[@style=\"color: red;\"]");
+    public static By errorTextMail = By.xpath("//p[@style=\"color: red;\"]");
 }

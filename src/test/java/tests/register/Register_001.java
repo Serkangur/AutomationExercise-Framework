@@ -12,7 +12,7 @@ public class Register_001 extends BaseTest {
     LoginPage loginPage;
     RegisterPage registerPage;
 
-    @Description("Başarılı kullanıcı kaydı")
+    @Description("Geçerli Bilgiler ile Kayıt İşlemi")
     @Test
     public void register_001() {
         homePage = new HomePage(driver);
@@ -20,7 +20,7 @@ public class Register_001 extends BaseTest {
 
         loginPage = new LoginPage(driver);
         loginPage.inputNameTextBox("Serkan");
-        loginPage.inputSignUpTextBox();//generate random mail
+        loginPage.inputSignUpRandomTextBox();//generate random mail
         loginPage.clickToSignUpButton();
 
         registerPage = new RegisterPage(driver);

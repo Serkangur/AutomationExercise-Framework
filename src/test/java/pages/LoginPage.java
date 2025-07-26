@@ -29,8 +29,15 @@ public class LoginPage extends BasePage {
         inputTextMethod(name,nameTextBox);
     }
 
-    public void inputSignUpTextBox(){
+    public void inputSignUpRandomTextBox(){
         inputTextMethod(email,signUpMailTextBox);
+    }
+
+    public void inputSignUpTextBox(String email){
+        inputTextMethod(email,signUpMailTextBox);
+    }
+    public String getTextErrorMessageMail() {
+        return getTextMethod(errorTextMail);
     }
 
     public void clickToSignUpButton(){
