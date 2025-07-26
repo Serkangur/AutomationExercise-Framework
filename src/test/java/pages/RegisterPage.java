@@ -20,8 +20,61 @@ public class RegisterPage extends BasePage {
     }
 
     public void selectDayDropDown(String day){
-        Select selectDay = new Select(find(dayDropDown));
-        selectDay.selectByVisibleText(day);
+        selectDropDown(dayDropDown,day);
     }
+
+    public void selectMonthDropDown(String month){
+        selectDropDown(monthDropDown,month);
+    }
+
+    public void selectYearDropDown(String year){
+        selectDropDown(yearDropDown,year);
+    }
+
+    public void clickToNewsletter(){
+        clickToWebElement(newsletter);
+    }
+
+    public void clickToOptin(){
+        clickToWebElement(optin);
+    }
+
+    public void inputFirstName(String text){
+        inputTextMethod(text,firstName);
+    }
+
+    public void inputLastName(String text){
+        inputTextMethod(text,lastName);
+    }
+    public void inputCompany(String text){
+        inputTextMethod(text,company);
+    }
+
+    public void inputAdress(String text){
+        inputTextMethod(text,adress);
+    }
+
+    public void selectCountryDropDown(String country){
+        selectDropDown(countryDropDown,country);
+    }
+
+    public void inputState(String text){
+        inputTextMethod(text,state);
+    }
+
+    public void inputCity(String text){
+        inputTextMethod(text,city);
+    }
+    public void inputZipCode(String text){
+        inputTextMethod(text,zipCode);
+    }
+    public void inputPhone(String text){
+        inputTextMethod(text,mobilePhone);
+    }
+
+    public void clickToCreateButton(){
+        clickToWebElement(createButton);
+    }
+
 
 }

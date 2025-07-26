@@ -26,6 +26,23 @@ public class Register_001 extends BaseTest {
         registerPage = new RegisterPage(driver);
         registerPage.clickToGenderRadioButton();
         registerPage.inputPasswordTextBox("123456789");
+        registerPage.selectDayDropDown("5");
+        registerPage.selectMonthDropDown("August");
+        registerPage.selectYearDropDown("2000");
+        registerPage.clickToNewsletter();
+        registerPage.clickToOptin();
+        registerPage.inputFirstName("Serkan");
+        registerPage.inputLastName("Gür");
+        registerPage.inputCompany("Insider");
+        registerPage.inputAdress("Newyork");
+        registerPage.selectCountryDropDown("United States");
+        registerPage.inputState("Newyork");
+        registerPage.inputCity("Newyork");
+        registerPage.inputZipCode("07008");
+        registerPage.inputPhone("05315644526");
+        registerPage.clickToCreateButton();
+
+
 
 
 
