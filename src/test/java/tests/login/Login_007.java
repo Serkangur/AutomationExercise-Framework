@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 
+import static constants.ConstantsLoginPage.mailTextBox;
+
 public class Login_007 extends BaseTest {
     LoginPage loginPage;
     HomePage homePage;
@@ -21,6 +23,6 @@ public class Login_007 extends BaseTest {
         loginPage.inputMail("☐☐☐serkangur001@gmail.com");
         loginPage.inputPassword("123456789");
         loginPage.clickLoginButton();
-        Assert.assertEquals("Başında \"@\" bulunan kısımda \"☐\" simgesi bulunmamalıdır.", loginPage.getEmailValidationMessage());
+        Assert.assertEquals("Başında \"@\" bulunan kısımda \"☐\" simgesi bulunmamalıdır.", loginPage.getEmailValidationMessage(mailTextBox));
     }
 }

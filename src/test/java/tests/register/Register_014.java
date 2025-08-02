@@ -2,19 +2,22 @@ package tests.register;
 
 import base.BaseTest;
 import io.qameta.allure.Description;
+import org.junit.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.RegisterPage;
 
-public class Register_001 extends BaseTest {
+import static constants.ConstantsRegisterPage.*;
+
+public class Register_014 extends BaseTest {
     HomePage homePage;
     LoginPage loginPage;
     RegisterPage registerPage;
 
-    @Description("Geçerli Bilgiler ile Kayıt İşlemi")
+    @Description("FirstName ve Lastname Alanlarına Sayısal Değer Girerek Kayıt")
     @Test
-    public void register_001() {
+    public void register_014() {
         homePage = new HomePage(driver);
         homePage.clickToLoginPage();
 
@@ -31,8 +34,8 @@ public class Register_001 extends BaseTest {
         registerPage.selectYearDropDown("2000");
         registerPage.clickToNewsletter();
         registerPage.clickToOptin();
-        registerPage.inputFirstName("Serkan");
-        registerPage.inputLastName("Gür");
+        registerPage.inputFirstName("12345");
+        registerPage.inputLastName("12345");
         registerPage.inputCompany("Insider");
         registerPage.inputAdress("Newyork");
         registerPage.selectCountryDropDown("United States");
@@ -41,7 +44,8 @@ public class Register_001 extends BaseTest {
         registerPage.inputZipCode("07008");
         registerPage.inputPhone("05315644526");
         registerPage.clickToCreateButton();
-
+        Assert.assertEquals("Ad soyad yalnızca alfabetik karakter içermelidir.", loginPage.getEmailValidationMessage(firstName));
+        Assert.assertEquals("Ad soyad yalnızca alfabetik karakter içermelidir.", loginPage.getEmailValidationMessage(lastName));
 
     }
 }

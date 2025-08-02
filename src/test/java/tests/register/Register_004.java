@@ -2,19 +2,22 @@ package tests.register;
 
 import base.BaseTest;
 import io.qameta.allure.Description;
+import org.junit.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 import pages.RegisterPage;
 
-public class Register_001 extends BaseTest {
+import static constants.ConstantsRegisterPage.*;
+
+public class Register_004 extends BaseTest {
     HomePage homePage;
     LoginPage loginPage;
     RegisterPage registerPage;
 
-    @Description("Geçerli Bilgiler ile Kayıt İşlemi")
+    @Description("Boş Şifre Alanı ile Kayıt İşlemi")
     @Test
-    public void register_001() {
+    public void register_004() {
         homePage = new HomePage(driver);
         homePage.clickToLoginPage();
 
@@ -25,7 +28,7 @@ public class Register_001 extends BaseTest {
 
         registerPage = new RegisterPage(driver);
         registerPage.clickToGenderRadioButton();
-        registerPage.inputPasswordTextBox("123456789");
+        registerPage.inputPasswordTextBox("");
         registerPage.selectDayDropDown("5");
         registerPage.selectMonthDropDown("August");
         registerPage.selectYearDropDown("2000");
@@ -41,6 +44,7 @@ public class Register_001 extends BaseTest {
         registerPage.inputZipCode("07008");
         registerPage.inputPhone("05315644526");
         registerPage.clickToCreateButton();
+        Assert.assertEquals("Lütfen bu alanı doldurun.", loginPage.getEmailValidationMessage(passwordTextBox));
 
 
     }

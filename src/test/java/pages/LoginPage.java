@@ -1,6 +1,7 @@
 package pages;
 
 import base.BasePage;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
@@ -33,6 +34,8 @@ public class LoginPage extends BasePage {
         inputTextMethod(email,signUpMailTextBox);
     }
 
+
+
     public void inputSignUpTextBox(String email){
         inputTextMethod(email,signUpMailTextBox);
     }
@@ -48,10 +51,10 @@ public class LoginPage extends BasePage {
         return getTextMethod(errorTextPassword);
     }
 
-    public String getEmailValidationMessage() {
+    public String getEmailValidationMessage(By locator) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         return (String) js.executeScript(
-                "return arguments[0].validationMessage;", find(mailTextBox)
+                "return arguments[0].validationMessage;", find(locator)
         );
     }
 }

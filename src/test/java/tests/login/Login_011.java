@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
 
+import static constants.ConstantsLoginPage.mailTextBox;
+
 public class Login_011 extends BaseTest {
 
     LoginPage loginPage;
@@ -22,7 +24,7 @@ public class Login_011 extends BaseTest {
 
         loginPage.inputPassword("123456789");
         loginPage.clickLoginButton();
-        Assert.assertEquals("Lütfen bu alanı doldurun.", loginPage.getEmailValidationMessage());
+        Assert.assertEquals("Lütfen bu alanı doldurun.", loginPage.getEmailValidationMessage(mailTextBox));
 
 
     }
