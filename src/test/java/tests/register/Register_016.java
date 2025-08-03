@@ -8,24 +8,25 @@ import pages.HomePage;
 import pages.LoginPage;
 import pages.RegisterPage;
 
+
 import static constants.ConstantsLoginPage.*;
 
-public class Register_003 extends BaseTest {
+public class Register_016 extends BaseTest {
     HomePage homePage;
     LoginPage loginPage;
 
 
-    @Description("Eksik EMail Formatı ile Kayıt İşlemi ")
+    @Description("Geçersiz Email (birden fazla '@') ile Kayıt İşlemi  ")
     @Test
-    public void register_003() {
+    public void register_016() {
         homePage = new HomePage(driver);
         homePage.clickToLoginPage();
 
         loginPage = new LoginPage(driver);
         loginPage.inputNameTextBox("Serkan");
-        loginPage.inputSignUpTextBox("serkaan@g");
+        loginPage.inputSignUpTextBox("user@domain@domain.com");
         loginPage.clickToSignUpButton();
-        Assert.assertEquals("Email formatı yanlış girilmiştir.", loginPage.getEmailValidationMessage(signUpMailTextBox));
+        Assert.assertEquals("Başında \"@\" bulunan kısımda \"@\" simgesi bulunmamalıdır.", loginPage.getEmailValidationMessage(signUpMailTextBox));
 
 
 

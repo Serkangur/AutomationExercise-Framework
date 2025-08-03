@@ -6,26 +6,25 @@ import org.junit.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
-import pages.RegisterPage;
 
-import static constants.ConstantsLoginPage.*;
+import static constants.ConstantsLoginPage.signUpMailTextBox;
 
-public class Register_003 extends BaseTest {
+public class Register_017 extends BaseTest {
     HomePage homePage;
     LoginPage loginPage;
 
 
-    @Description("Eksik EMail Formatı ile Kayıt İşlemi ")
+    @Description("Karakter Sınırını Aşan Email ile Kayıt İşlemi")
     @Test
-    public void register_003() {
+    public void register_017() {
         homePage = new HomePage(driver);
         homePage.clickToLoginPage();
 
         loginPage = new LoginPage(driver);
         loginPage.inputNameTextBox("Serkan");
-        loginPage.inputSignUpTextBox("serkaan@g");
+        loginPage.inputSignUpTextBox("randomro2ssaddddddddddddddddddduussuuuusuuuuuuuuuuuussdsdsuudsd3u@gmail.com");
         loginPage.clickToSignUpButton();
-        Assert.assertEquals("Email formatı yanlış girilmiştir.", loginPage.getEmailValidationMessage(signUpMailTextBox));
+        Assert.assertEquals("Lütfen geçerli bir e-posta adresi gir.", loginPage.getEmailValidationMessage(signUpMailTextBox));
 
 
 
